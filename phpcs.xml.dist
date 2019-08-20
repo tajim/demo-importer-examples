@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<ruleset name="Demo Importer Examples">
+	<description>Check WordPress coding standards</description>
+
+	<file>.</file>
+
+	<arg name="colors"/>
+	<arg value="ps"/>
+	<arg name="extensions" value="php"/>
+
+	<rule ref="WordPress"/>
+	<rule ref="WordPress-Extra"/>
+	<rule ref="WordPress-Docs"/>
+
+	<rule ref="Generic.CodeAnalysis.UnusedFunctionParameter"/>
+	<rule ref="Generic.Commenting.Todo"/>
+
+	<config name="minimum_supported_wp_version" value="5.1"/>
+	<config name="testVersion" value="5.2-"/>
+
+	<rule ref="WordPress.WP.I18n">
+		<properties>
+			<property name="text_domain" type="array" value="my-theme-text-domain"/>
+		</properties>
+	</rule>
+	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
+		<properties>
+			<property name="prefixes" type="array" value="mytheme,MyTheme"/>
+		</properties>
+	</rule>
+	<rule ref="WordPress.CodeAnalysis.EmptyStatement"/>
+	<rule ref="WordPress">
+		<exclude name="WordPress.Files.FileName.InvalidClassFileName" />
+	</rule>
+</ruleset>
